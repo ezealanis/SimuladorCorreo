@@ -1,0 +1,14 @@
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\bin\Debug\DiseñoCorreo.exe.config
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\bin\Debug\DiseñoCorreo.exe
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\bin\Debug\DiseñoCorreo.pdb
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.csproj.AssemblyReference.cache
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.FrmPrincipal.resources
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.Properties.Resources.resources
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.csproj.GenerateResource.cache
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.csproj.CoreCompileInputs.cache
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.exe
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.pdb
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\bin\Debug\Entidades.dll
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\bin\Debug\Entidades.pdb
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\bin\Debug\Entidades.dll.config
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\DiseñoCorreo\obj\Debug\DiseñoCorreo.csproj.CopyComplete

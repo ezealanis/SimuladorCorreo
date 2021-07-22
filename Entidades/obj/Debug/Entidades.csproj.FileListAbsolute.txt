@@ -1,0 +1,9 @@
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\bin\Debug\Entidades.dll
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\bin\Debug\Entidades.pdb
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\obj\Debug\Entidades.csproj.AssemblyReference.cache
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\obj\Debug\Entidades.Properties.Resources.resources
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\obj\Debug\Entidades.csproj.GenerateResource.cache
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\obj\Debug\Entidades.csproj.CoreCompileInputs.cache
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\obj\Debug\Entidades.dll
+C:\Users\ezequ\Desktop\Correo\ProyectoCorreo\Entidades\obj\Debug\Entidades.pdb
