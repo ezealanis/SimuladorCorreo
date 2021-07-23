@@ -6,10 +6,11 @@ using System.Threading;
 using System.Threading.Tasks;
 using Entidades.Interfaz;
 using Entidades.Entidades;
+using Entidades.Excepciones;
 
 namespace Entidades
 {
-    public enum EEstado { Ingresado, EnViaje, Entregado}    
+    public enum EEstado { Ingresado, EnViaje, Entregado }
 
     public class Paquete : IMostrar<Paquete>
     {
@@ -72,29 +73,34 @@ namespace Entidades
             this.trackingID = trackingID;
         }
 
+        public string InfoPaquete()
+        {
+            return $"Tracking ID: {this.TrackinID}\nDomicilio de Entrega: {this.DireccionEntrega}\nEstado: {this.Estado}\n";
+        }
+
         //Implementacion de la interfaz, muestra los datos recibidos.
         public string MostrarDatos(IMostrar<Paquete> elemento)
         {
             Paquete aux = (Paquete)elemento;
 
-            return $"{aux.TrackinID} para {aux.DireccionEntrega}";
+            return aux.InfoPaquete();
         }
 
         //simula la entrega de un paquete, cada 4 segundos cambia su estado.
         public void MockCicloDeVida()
         {
-            while (this.Estado != EEstado.Entregado)
+            do
             {
-                this.InformaEstado(this, new EventArgs());
                 Thread.Sleep(4000);
-                this.Estado += 1;                
-            }
+                this.Estado += 1;
+                this.InformaEstado(this, new EventArgs());
+            } while (this.Estado != EEstado.Entregado);
 
             try
             {
                 PaqueteDAO.Insertar(this);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 throw new Exception(ex.Message);
             }
@@ -105,9 +111,9 @@ namespace Entidades
         //Dos paquetes son iguales si tienen el mismo tracking
         public static bool operator ==(Paquete p1, Paquete p2)
         {
-            if(p1.TrackinID == p2.TrackinID)
+            if (p1.TrackinID == p2.TrackinID)
             {
-                return false;
+                throw new TrackingIDRepetidoException("Tracking repetido, ya se encuentra en el correo.");
             }
 
             return true;
@@ -121,13 +127,7 @@ namespace Entidades
         //Sobrecarga que retorna toda la informacion del paquete.
         public override string ToString()
         {
-            StringBuilder sb = new StringBuilder();
-
-            sb.AppendLine($"Tracking ID: {this.TrackinID}");
-            sb.AppendLine($"Direccion de entrega: {this.DireccionEntrega}");
-            sb.Append($"Estado de entrega: {this.Estado}");
-
-            return sb.ToString();
+            return $"Tracking ID: {this.TrackinID}";
         }
 
         #endregion

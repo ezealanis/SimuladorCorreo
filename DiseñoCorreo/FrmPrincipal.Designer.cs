@@ -29,19 +29,24 @@ namespace DiseñoCorreo
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.gbxEstadoPaquetes = new System.Windows.Forms.GroupBox();
+            this.lstEntregado = new System.Windows.Forms.ListBox();
             this.lstEnViaje = new System.Windows.Forms.ListBox();
             this.lstIngresado = new System.Windows.Forms.ListBox();
             this.lblEntregado = new System.Windows.Forms.Label();
             this.lblEnViaje = new System.Windows.Forms.Label();
             this.lblIngresado = new System.Windows.Forms.Label();
             this.gbxPaquete = new System.Windows.Forms.GroupBox();
+            this.lblTrackNumber = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.mtxtTrackingID = new System.Windows.Forms.MaskedTextBox();
             this.btnMostrarTodos = new System.Windows.Forms.Button();
             this.btnAgregarPaquete = new System.Windows.Forms.Button();
             this.txtDireccionEntrega = new System.Windows.Forms.TextBox();
             this.rtbMostrar = new System.Windows.Forms.RichTextBox();
-            this.mtxtTrackingID = new System.Windows.Forms.MaskedTextBox();
-            this.lstEntregado = new System.Windows.Forms.ListBox();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.gbxEstadoPaquetes.SuspendLayout();
             this.gbxPaquete.SuspendLayout();
             this.SuspendLayout();
@@ -60,6 +65,14 @@ namespace DiseñoCorreo
             this.gbxEstadoPaquetes.TabIndex = 0;
             this.gbxEstadoPaquetes.TabStop = false;
             this.gbxEstadoPaquetes.Text = "Estado de los Paquetes";
+            // 
+            // lstEntregado
+            // 
+            this.lstEntregado.FormattingEnabled = true;
+            this.lstEntregado.Location = new System.Drawing.Point(433, 60);
+            this.lstEntregado.Name = "lstEntregado";
+            this.lstEntregado.Size = new System.Drawing.Size(166, 199);
+            this.lstEntregado.TabIndex = 6;
             // 
             // lstEnViaje
             // 
@@ -106,20 +119,48 @@ namespace DiseñoCorreo
             // 
             // gbxPaquete
             // 
+            this.gbxPaquete.Controls.Add(this.lblTrackNumber);
+            this.gbxPaquete.Controls.Add(this.label2);
             this.gbxPaquete.Controls.Add(this.mtxtTrackingID);
             this.gbxPaquete.Controls.Add(this.btnMostrarTodos);
             this.gbxPaquete.Controls.Add(this.btnAgregarPaquete);
             this.gbxPaquete.Controls.Add(this.txtDireccionEntrega);
             this.gbxPaquete.Location = new System.Drawing.Point(346, 308);
             this.gbxPaquete.Name = "gbxPaquete";
-            this.gbxPaquete.Size = new System.Drawing.Size(271, 118);
+            this.gbxPaquete.Size = new System.Drawing.Size(271, 130);
             this.gbxPaquete.TabIndex = 2;
             this.gbxPaquete.TabStop = false;
             this.gbxPaquete.Text = "Paquete";
             // 
+            // lblTrackNumber
+            // 
+            this.lblTrackNumber.AutoSize = true;
+            this.lblTrackNumber.Location = new System.Drawing.Point(19, 29);
+            this.lblTrackNumber.Name = "lblTrackNumber";
+            this.lblTrackNumber.Size = new System.Drawing.Size(63, 13);
+            this.lblTrackNumber.TabIndex = 7;
+            this.lblTrackNumber.Text = "Tracking ID";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(19, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(52, 13);
+            this.label2.TabIndex = 8;
+            this.label2.Text = "Direccion";
+            // 
+            // mtxtTrackingID
+            // 
+            this.mtxtTrackingID.Location = new System.Drawing.Point(13, 45);
+            this.mtxtTrackingID.Mask = "000-000-0000";
+            this.mtxtTrackingID.Name = "mtxtTrackingID";
+            this.mtxtTrackingID.Size = new System.Drawing.Size(151, 20);
+            this.mtxtTrackingID.TabIndex = 4;
+            // 
             // btnMostrarTodos
             // 
-            this.btnMostrarTodos.Location = new System.Drawing.Point(176, 76);
+            this.btnMostrarTodos.Location = new System.Drawing.Point(170, 89);
             this.btnMostrarTodos.Name = "btnMostrarTodos";
             this.btnMostrarTodos.Size = new System.Drawing.Size(85, 23);
             this.btnMostrarTodos.TabIndex = 3;
@@ -129,7 +170,7 @@ namespace DiseñoCorreo
             // 
             // btnAgregarPaquete
             // 
-            this.btnAgregarPaquete.Location = new System.Drawing.Point(176, 30);
+            this.btnAgregarPaquete.Location = new System.Drawing.Point(170, 43);
             this.btnAgregarPaquete.Name = "btnAgregarPaquete";
             this.btnAgregarPaquete.Size = new System.Drawing.Size(85, 23);
             this.btnAgregarPaquete.TabIndex = 2;
@@ -139,7 +180,7 @@ namespace DiseñoCorreo
             // 
             // txtDireccionEntrega
             // 
-            this.txtDireccionEntrega.Location = new System.Drawing.Point(19, 78);
+            this.txtDireccionEntrega.Location = new System.Drawing.Point(13, 91);
             this.txtDireccionEntrega.Name = "txtDireccionEntrega";
             this.txtDireccionEntrega.Size = new System.Drawing.Size(151, 20);
             this.txtDireccionEntrega.TabIndex = 1;
@@ -149,24 +190,20 @@ namespace DiseñoCorreo
             this.rtbMostrar.Location = new System.Drawing.Point(12, 308);
             this.rtbMostrar.Name = "rtbMostrar";
             this.rtbMostrar.ReadOnly = true;
-            this.rtbMostrar.Size = new System.Drawing.Size(328, 118);
+            this.rtbMostrar.Size = new System.Drawing.Size(328, 130);
             this.rtbMostrar.TabIndex = 1;
             this.rtbMostrar.Text = "";
             // 
-            // mtxtTrackingID
+            // contextMenuStrip1
             // 
-            this.mtxtTrackingID.Location = new System.Drawing.Point(19, 32);
-            this.mtxtTrackingID.Name = "mtxtTrackingID";
-            this.mtxtTrackingID.Size = new System.Drawing.Size(151, 20);
-            this.mtxtTrackingID.TabIndex = 4;
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
-            // lstEntregado
+            // contextMenuStrip2
             // 
-            this.lstEntregado.FormattingEnabled = true;
-            this.lstEntregado.Location = new System.Drawing.Point(433, 60);
-            this.lstEntregado.Name = "lstEntregado";
-            this.lstEntregado.Size = new System.Drawing.Size(166, 199);
-            this.lstEntregado.TabIndex = 6;
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // FrmPrincipal
             // 
@@ -206,6 +243,10 @@ namespace DiseñoCorreo
         private System.Windows.Forms.ListBox lstEntregado;
         private System.Windows.Forms.MaskedTextBox mtxtTrackingID;
         private System.Windows.Forms.RichTextBox rtbMostrar;
+        private System.Windows.Forms.Label lblTrackNumber;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
     }
 }
 

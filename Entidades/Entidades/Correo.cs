@@ -35,13 +35,12 @@ namespace Entidades.Entidades
 
         //Muestra todos los datos de los paquetes en la lista.
         public string MostrarDatos(IMostrar<List<Paquete>> elemento)
-        {
-            List<Paquete> lista = (List<Paquete>)elemento;
+        {            
             StringBuilder sb = new StringBuilder();
 
-            foreach(Paquete item in lista)
+            foreach(Paquete item in ((Correo)elemento).Paquetes)
             {
-                sb.AppendLine($"{item.TrackinID} para {item.DireccionEntrega}");
+                sb.AppendLine(item.InfoPaquete());
             }
 
             return sb.ToString();
@@ -54,10 +53,18 @@ namespace Entidades.Entidades
             {
                 foreach (Paquete item in correo.Paquetes)
                 {
-                    if (item == p)
+                    try
                     {
-                        throw new TrackingIDRepetidoException("El paquete ya se encuentra en la lista.");
+                        if (item != p)
+                        {
+                            throw new TrackingIDRepetidoException("El paquete ya se encuentra en la lista.");
+                        }
                     }
+                    catch(Exception ex)
+                    {
+                        throw new Exception(ex.Message);
+                    }
+                    
                 }
 
                 correo.Paquetes.Add(p);

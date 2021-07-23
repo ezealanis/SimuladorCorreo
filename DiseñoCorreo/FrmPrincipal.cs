@@ -32,11 +32,12 @@ namespace DiseñoCorreo
             if (!string.IsNullOrWhiteSpace(this.mtxtTrackingID.Text) && !string.IsNullOrWhiteSpace(this.txtDireccionEntrega.Text))
             {
                 Paquete nuevoPaquete = new Paquete(this.txtDireccionEntrega.Text, this.mtxtTrackingID.Text);
-                nuevoPaquete.InformaEstado += this.paq_InformaEstado;
+                nuevoPaquete.InformaEstado += this.paq_InformaEstado;                
                 
                 try
                 {
                     this.correo += nuevoPaquete;
+                    this.ActualizarEstados();
                 }
                 catch(Exception ex)
                 {
@@ -102,16 +103,21 @@ namespace DiseñoCorreo
                     MessageBox.Show("No se pudo guardar el archivo.");
                 }
             }
+        }        
+
+        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            this.correo.FinEntregas();
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
+        {
+
         }
 
         private void btnMostrarTodos_Click(object sender, EventArgs e)
         {
             this.MostrarInformacion<List<Paquete>>((IMostrar<List<Paquete>>)correo);
-        }
-
-        private void FrmPrincipal_FormClosing(object sender, FormClosingEventArgs e)
-        {
-            this.correo.FinEntregas();
         }
     }
 }
